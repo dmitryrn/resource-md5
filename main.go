@@ -46,6 +46,10 @@ func ParseFlags(config *config.Config) {
 		fmt.Println("the 'parallel' argument can't be 0")
 		os.Exit(1)
 	}
+	if config.Parallel > 100 {
+		fmt.Println("the 'parallel' argument can't greater than 100")
+		os.Exit(1)
+	}
 
 	config.URLs = args
 }
